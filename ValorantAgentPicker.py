@@ -1,16 +1,30 @@
 from random import randint
+import os
 
-# all current agents as of October 18th, 2022
-AGENTS = ["Brimstone", "Viper", "Omen", "Killjoy", "Cypher", "Sova", 
-          "Sage", "Phoenix", "Jett", "Reyna", "Raze", "Breach", 
-          "Skye", "Yoru", "Astra", "KAY/O", "Chamber", "Neon", 
-          "Fade", "Harbor"]
+if not os.path.exists("./agents"):
+    print("WOAH THERE!!")
+    print("You're trying to run this program without the agents file!")
+    print("Please make sure there's a file called \"agents\" in the main directory.")
+    swaws = input()
+    exit()
 
 # function to give a random agent in AGENTS
 def generator():
     length = len(AGENTS) - 1
     agent = AGENTS[randint(0, length)]
     return agent
+
+# reads the agents file 
+def readAgentsFile(array, file):
+    with open(file, "r") as file:
+        for line in file:
+            if '#' not in line:
+                array.append(line.strip())
+
+# array that will contain the list of agents
+AGENTS = []
+
+readAgentsFile(AGENTS, "./agents")
 
 hasPicked = False
 playercount = 0
