@@ -14,3 +14,5 @@ Download the latest release [here](https://github.com/YakuzaDoggo/Random-Valoran
 - Chaos ensues.
 
 This program also currently has the added ability to do a reroll instead. In case someone doesn't have a given agent, or wants to be a crybaby about what they were given.
+
+There's also an agents file that you can use to select which agents are and aren't allowed to be picked. So that's neat I guess...
