@@ -1,7 +1,7 @@
 from random import randint
 import os
 
-if not os.path.exists("./agents"):
+if not os.path.exists("./agents.txt"):
     print("WOAH THERE!!")
     print("You're trying to run this program without the agents file!")
     print("Please make sure there's a file called \"agents\" in the main directory.")
@@ -24,7 +24,7 @@ def readAgentsFile(array, file):
 # array that will contain the list of agents
 AGENTS = []
 
-readAgentsFile(AGENTS, "./agents")
+readAgentsFile(AGENTS, "./agents.txt")
 
 hasPicked = False
 playercount = 0
@@ -47,6 +47,12 @@ while not hasPicked:
         continue
     else:
         hasPicked = True
+
+if int(response) > len(AGENTS):
+    print("HEY! You gave too many players for the amount of blacklisted agents! \n\nEiter change playercount or whitelist more agents!")
+    swaws = input()
+    exit()
+
 # our roster of agents
 roster = []
 
@@ -55,16 +61,10 @@ roster.append(generator())
 playercount = int(response)
 x = 1
 while(x < playercount):
-    unique = False
-    while not unique:
-        nextagent = generator()
-        for agent in roster:
-            if nextagent == agent:
-                nextagent = generator()
-                break
-        unique = True
-    roster.append(nextagent)
-    x += 1
+    nextagent = generator()
+    if nextagent not in roster:
+        roster.append(nextagent)
+        x += 1
 
 # roster after all agents are picked
 print("\n\n\nThe roster is ready!")
