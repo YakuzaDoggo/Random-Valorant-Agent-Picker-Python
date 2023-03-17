@@ -5,7 +5,7 @@ Similar to my other valorant agent picker, albeit in the Python language instead
 The release version of this is only EXE, meaning Windows users are only allowed to run it. You could run it on Linux via WINE if you wish, or directly run the python code instead.
 
 ## Installation
-Download the latest release [here](https://github.com/YakuzaDoggo/Random-Valorant-Agent-Picker/releases), download and run.
+Download the latest release [here](https://github.com/YakuzaDoggo/Random-Valorant-Agent-Picker-Python/releases), download and run.
 
 ## Usage
 - Start the program.
